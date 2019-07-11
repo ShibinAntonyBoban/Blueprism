@@ -1,0 +1,31 @@
+dim application as object
+dim connection as object 
+dim session as object
+dim SapGuiAuto as object
+SapGuiAuto  = GetObject("SAPGUI")
+application = SapGuiAuto.GetScriptingEngine
+connection = application.Children(0)
+session    = connection.Children(0)
+
+
+session.findById("wnd[0]").maximize
+session.findById("wnd[0]/usr/ctxtGD-TAB").text = "ZCOUMASSDIR"
+session.findById("wnd[0]/usr/txtGD-MAX_LINES").text = ""
+session.findById("wnd[0]/usr/txtGD-MAX_LINES").setFocus
+session.findById("wnd[0]/usr/txtGD-MAX_LINES").caretPosition = 0
+session.findById("wnd[0]/tbar[1]/btn[8]").press
+session.findById("wnd[0]/tbar[0]/btn[3]").press
+session.findById("wnd[0]/tbar[1]/btn[18]").press
+session.findById("wnd[0]/usr/tblSAPLZE16NSELFIELDS_TC/chkGS_SELFIELDS-MARK[5,1]").selected = true
+session.findById("wnd[0]/usr/tblSAPLZE16NSELFIELDS_TC/chkGS_SELFIELDS-MARK[5,1]").setFocus
+session.findById("wnd[0]/tbar[0]/btn[71]").press
+session.findById("wnd[1]/usr/sub:SAPLSPO4:0300/txtSVALD-VALUE[0,21]").text = "VERAK"
+session.findById("wnd[1]/usr/sub:SAPLSPO4:0300/txtSVALD-VALUE[0,21]").caretPosition = 5
+session.findById("wnd[1]/tbar[0]/btn[0]").press
+session.findById("wnd[0]/usr/tblSAPLZE16NSELFIELDS_TC/chkGS_SELFIELDS-MARK[5,0]").selected = true
+session.findById("wnd[0]/usr/tblSAPLZE16NSELFIELDS_TC/chkGS_SELFIELDS-MARK[5,0]").setFocus
+session.findById("wnd[0]/tbar[1]/btn[8]").press
+session.findById("wnd[0]/usr/cntlRESULT_LIST/shellcont/shell").pressToolbarContextButton ("&MB_EXPORT")
+session.findById("wnd[0]/usr/cntlRESULT_LIST/shellcont/shell").selectContextMenuItem ("&XXL")
+session.findById("wnd[1]/tbar[0]/btn[0]").press
+session.findById("wnd[1]/tbar[0]/btn[11]").press
