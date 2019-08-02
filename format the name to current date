@@ -1,0 +1,1 @@
+[ENV_TXT_INPUT_FOLDER_PATH] & [txt_FiscalYear] & "\" &  [ENV_TXT__SHARED_FOLDERPATH] & "\" & "Shibin" & FormatDate(Now(), "MM.dd.yy") & ".xlsx"
